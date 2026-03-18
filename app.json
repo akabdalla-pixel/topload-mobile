@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "topload-mobile",
-    "slug": "topload-mobile",
+    "name": "Topload",
+    "slug": "topload",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -9,7 +9,14 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true
+        },
+        "ITSAppUsesNonExemptEncryption": false
+      },
+      "bundleIdentifier": "com.a62902.topload"
     },
     "android": {
       "adaptiveIcon": {
@@ -27,6 +34,7 @@
     },
     "plugins": [
       "expo-router",
+      "expo-secure-store",
       [
         "expo-splash-screen",
         {
@@ -43,6 +51,12 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "553b5b29-6de0-4bd5-bff5-8c02123ad4b5"
+      }
     }
   }
 }
